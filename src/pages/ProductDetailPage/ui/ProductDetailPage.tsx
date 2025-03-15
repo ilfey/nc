@@ -1,17 +1,11 @@
-import {productDetailQuery} from "../api";
-import {useUnit} from "effector-react";
+import {BaseLayout} from "../../../widgets/layout/BaseLayout";
+import {DetailCard} from "./DetailCard.tsx";
 
 export const ProductDetailPage = () => {
-  const {
-    data,
-  } = useUnit({
-    data: productDetailQuery.$data,
-  })
-
   return (
-    <div className="">
-      ProductDetailPage
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    <BaseLayout title="Product details">
+      <DetailCard/>
+    </BaseLayout>
   )
 }
+

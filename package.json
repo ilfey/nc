@@ -28,6 +28,7 @@
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/react-image-magnify": "^2.7.4",
     "@types/react-window": "^1.8.8",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "eslint": "^9.21.0",
@@ -37,6 +38,7 @@
     "postcss": "^8.5.3",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
+    "react-image-magnify": "^2.7.4",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"

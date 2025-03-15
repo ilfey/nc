@@ -7,14 +7,11 @@ import {ProductVerticalCard} from "../../../entities/product/Product/ui";
 import {ProductList as ProductListDTO} from "../../../entities/product/Product/model";
 
 
-// Размеры элемента
 const ITEM_WIDTH = 164;
 const ITEM_HEIGHT = 260;
 
-// Внутренний отступ сетки
 const GRID_PADDING = 24;
 
-// Количество колонок
 const COLUMN_COUNT = 7;
 
 interface CellProps {
@@ -42,8 +39,8 @@ const Cell = ({columnIndex, rowIndex, style, data}: CellProps) => {
   return (
     <div style={{
       ...style,
-      padding: `${GRID_PADDING / 2}px`, // Внутренний отступ ячейки
-      boxSizing: 'border-box', // Учитываем padding в размерах
+      padding: `${GRID_PADDING / 2}px`,
+      boxSizing: 'border-box',
     }}>
       <ProductVerticalCard
         data={item}
@@ -66,7 +63,7 @@ export const ProductList = () => {
   })
 
   if (!data) {
-    return
+    return <>Loading...</>
   }
 
   return (

@@ -14,7 +14,7 @@ interface Props {
 
 export const ProductHorizontalCard = ({data, selected, onToggle, style}: Props) => {
   return (
-    <Card p={rem(12)} style={style}>
+    <Card p={rem(12)} style={style} radius="md">
       <Group gap={rem(16)} wrap="nowrap">
         <Link
           to={routes.product.detail}

@@ -7,11 +7,9 @@ import {Box, rem, Stack, Text} from "@mantine/core";
 import React from "react";
 import {baseLayoutModel} from "../model";
 
-// Размеры элемента
 const ITEM_WIDTH = 320;
 const ITEM_HEIGHT = 104;
 
-// Внутренний отступ сетки
 const LIST_PADDING = 12;
 
 interface RowProps {
@@ -58,13 +56,36 @@ const Row = ({index, style, data}: RowProps) => {
   )
 };
 
-
-export const Favorites = () => {
+const FavoritesList = () => {
   const {
     data,
   } = useUnit({
     data: baseLayoutModel.$data,
   })
+
+  if (!data) {
+    return <>loading...</>
+  }
+
+  return (
+    <Box flex="1 0 auto">
+      <AutoSizer>
+        {({height, width}) => (
+          <FixedSizeList
+            height={height}
+            itemCount={data.length}
+            width={width}
+            itemData={data}
+            itemSize={ITEM_HEIGHT}>
+            {Row}
+          </FixedSizeList>
+        )}
+      </AutoSizer>
+    </Box>
+  )
+}
+
+export const Favorites = () => {
 
   return (
     <Stack
@@ -80,22 +101,8 @@ export const Favorites = () => {
         Favorites
       </Text>
 
-      <Box flex="1 0 auto">
-        {data && (
-          <AutoSizer>
-            {({height, width}) => (
-              <FixedSizeList
-                height={height}
-                itemCount={data.length}
-                width={width}
-                itemData={data}
-                itemSize={ITEM_HEIGHT}>
-                {Row}
-              </FixedSizeList>
-            )}
-          </AutoSizer>
-        )}
-      </Box>
+      <FavoritesList/>
+
     </Stack>
   )
 }

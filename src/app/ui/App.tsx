@@ -1,4 +1,3 @@
-import React from 'react';
 import {router} from "../../shared/routing.ts";
 import {Pages} from "../../pages";
 import {RouterProvider} from "atomic-router-react";

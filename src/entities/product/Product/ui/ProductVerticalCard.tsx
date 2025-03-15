@@ -14,7 +14,7 @@ interface Props {
 
 export const ProductVerticalCard = ({data, selected, onToggle, style}: Props) => {
   return (
-    <Card p={rem(12)} style={style}>
+    <Card p={rem(12)} style={style} radius="md">
       <Stack h="100%" gap={0} justify="space-between">
 
         <Stack gap={rem(16)}>

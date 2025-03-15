@@ -36,7 +36,7 @@ export const BaseLayout = ({children, title}: Props) => {
         <Favorites/>
       </AppShell.Navbar>
 
-      <AppShell.Main bg="#F6F7F9">
+      <AppShell.Main bg="#F6F7F9" display="grid">
         {children}
       </AppShell.Main>
     </AppShell>

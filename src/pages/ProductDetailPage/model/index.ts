@@ -7,8 +7,8 @@ export const productDetailModel = atom(() => {
   const currentRoute = routes.product.detail
 
   sample({
-    clock: currentRoute.opened,
     source: currentRoute.$params,
+    filter: (source) => !!source.id,
     target: productDetailQuery.refresh,
   })
 
